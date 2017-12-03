@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>河北师范大学</title>
+	<style>
+		*{
+			padding: 0;
+			margin:0;
+			font-family: "微软雅黑"
+			font-size:12px;
+		}
+		li {
+			list-style: none;
+		}
+		#header{
+			width: 937px;
+			background-color: #fff;
+			margin-left:300px;
+			margin-top:5px;
+			margin-bottom: 10px;
+			padding-bottom: 15px;
+			height: 60px;
+		}
+		.banner{
+			margin-top: 13px;
+			float: left;
+			width: 40px;
+
+		}
+		.search{
+			margin-left: -15px;
+			float: right;
+			height: 31px;
+			line-height: 31px;
+			width: 200px;
+			border: 1px solid #b6b6b6;
+			border-right: 0px;
+			padding-left: 10px;
+
+		}
+		.btn_search{
+			width: 45px;
+			height: 35px;
+			float:right;
+			background-image: url(images/botton.png);
+			background-position: center;
+			background-color: #fff;
+			background-repeat: no-repeat;
+			cursor: pointer;
+			border: 1px solid #b6b6b6;
+			margin-right: 20px;
+		}
+		.wrap{
+			width:1200px;
+			height: 397px;
+			clear:both;
+			position: relative;
+			border: 1px solid #000;
+			margin:30px auto;
+			overflow: hidden;
+		}
+		.wrap a{
+			display: none;
+		}
+		.bottom{
+			width: 1002px;
+			height: 73px;
+			position:absolute;
+			background:url(images/bg.png);
+			bottom: 0;
+			left: 99px;
+		}
+		.bottom>span{
+			display: block;
+			width: 50px;
+			height: 73px;
+			line-height: 73px;
+			text-align: center;
+			color: #fff;
+			font-size: 25px;
+			float: left;
+			cursor: pointer;
+		}
+		#next{
+			float: right;
+		}
+		.nav1>li>a{
+		display: block;
+		width: 110px;
+		height: 50px;
+		line-height: 50px;
+		padding-top: 5px;
+		text-align: center;
+		font-size: 15px;
+		font-weight: bold;
+		color: black;
+		text-decoration: none;
+		}
+		.nav1>li{
+			list-style: none;
+			float: left;
+			position: relative;
+		}
+		.nav1>li>ul{
+			display: none;
+		}
+		.nav1>li.nav2>ul{
+			display: block;
+			position: absolute;
+			top: 40px;
+			background:#0e6eb8;
+			color: #ffffff;
+			width: 120px;
+			z-index: 1;
+		}
+		.nav1>li.nav2>a{
+			background:#0e6eb8;
+			color: #ffffff;
+		}
+		.nav1>li>ul>li{
+			list-style: none;
+			cursor: pointer;
+		}
+		.nav1>li>ul>li>a{
+			width: 120px;
+			text-align: left;
+			padding-left: 30px;
+			font-size: 14px;
+			height: 45px;
+			line-height: 45px;
+			font-weight: 100;
+			text-decoration: none;
+			color: #ffffff;
+			display: inline;
+		}
+		.nav1>li>ul>li:hover{
+			background: #00aded;
+		}
+		.nav{
+			width: 1000px;
+			margin-left: 250px; 
+		}
+		hr{
+		width: auto;
+		}
+		#head{
+			height: 150px;
+			width: 1206px;
+		}
+	</style>
+</head>
+<body>
+	<div id="head">
+		<div id="header">
+			<div class="banner">
+				<img src="images/logo.png">
+			</div>
+			<div style="margin:0px; padding: 0px;">
+	        	<form action="http://www.hebtu.edu.cn/dynamic/search.jsp" method="post">
+	        		<input type="text" name="keyword" class="search" id="search" value="搜索"/ >
+	        		<input type="submit" name="" class="btn_search" value=""/>
+	        	</form>
+	        </div>
+		</div>
+		<hr>
+		<div class="nav">
+			<ul class="nav1">
+				<li><a href="http://www.hebtu.edu.cn/">首页</a></li> 
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/xxjj/index.html">学校概况</a>
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/xxjj/index.html">学校简介</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/xkzy/index.html">学科专业</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/zljg/index.html">治理架构</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/lsyg/index.html">历史沿革</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/xxbz/index.html">学校标志</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/xxgk/xyfg/index.html">校园风光</a></li>
+					    <li><a href="http://map.hebtu.edu.cn/">校园地图</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/jgsz/jxdw/index.html">机构设置</a>
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/jgsz/jxdw/index.html">教学单位</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/jgsz/glfw/index.html">管理服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/jgsz/fsdw/index.html">附属单位</a></li>
+					    <li><a href="http://huihua.hebtu.edu.cn">汇华学院</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/rcpy/szdw/index.html">人才培养</a>
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/rcpy/szdw/index.html">师资队伍</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/2014/08/30/20140830113808.html">本科生教育</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/rcpy/yjsjy/index.html">研究生教育</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/rcpy/jxjy/index.html">继续教育</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/rcpy/lxsjy/index.html">留学生教育</a></li>
+					 	<li><a href="http://zwhzbx.hebtu.edu.cn:8080">中外合作办学</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/kxyj/kypt/index.html">科学研究</a>
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/kxyj/kypt/index.html">科学研究平台</a></li>
+				        <li><a href="http://www.hebtu.edu.cn/a/sdxb/kxyj/zrkxyj/index.html">自然科学与技术</a></li>
+				        <li><a href="http://www.hebtu.edu.cn/a/sdxb/kxyj/rwkxyj/index.html">人文与社会科学</a></li>
+				        <li><a href="http://www.hebtu.edu.cn/a/sdxb/kxyj/hzjl/index.html">合作交流</a></li>
+				        <li><a href="http://xuebao.hebtu.edu.cn">学术期刊</a></li>
+					</ul>
+				</li>
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/bkszs/index.html">招生就业
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/bkszs/index.html">本科生招生</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/yjszs/index.html">研究生招生</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/jxjyzs/index.html">继续教育招生</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/lxszs/index.html">留学生招生</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/zsjy/jyfw/index.html">就业服务</a></li>
+					</ul>
+				</li>
+				<li><a href="http://www.hebtu.edu.cn/a/sdxb/rczp/index.html">人才招聘</a>
+				<li>
+					<a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/bksfw/index.html">公共服务</a>
+					<ul>
+						<li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/bksfw/index.html">本科生服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/yjsfw/index.html">研究生服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/xzswfw/index.html">行政事务服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/tsqbfw/index.html">图书情报服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/yjsgk/index.html">预决算公开</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/shfw/index.html">生活服务</a></li>
+					    <li><a href="http://www.hebtu.edu.cn/a/sdxb/ggfw/wlfw/index.html">网络服务</a></li>
+					</ul>
+				</li>
+				<li><a href="http://xyh.hebtu.edu.cn">校友会</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="wrap">
+		<a href="#" style="display: block;"><img src="images/img0.gif" alt=""></a>
+		<a href="#"><img src="images/img1.jpg" alt=""></a>
+		<a href="#"><img src="images/img2.jpg" alt=""></a>
+		<a href="#"><img src="images/img3.jpg" alt=""></a>
+		<a href="#"><img src="images/img4.jpg" alt=""></a>
+		<a href="#"><img src="images/img5.jpg" alt=""></a>
+		<a href="#"><img src="images/img6.jpg" alt=""></a>
+		<a href="#"><img src="images/img7.jpg" alt=""></a>
+		<a href="#"><img src="images/img8.jpg" alt=""></a>
+		<div class="bottom">
+			<span id="pre"><</span>
+			<span id="next">></span>
+		</div>
+	</div>
+</body>
+<script>
+	var wrap = document.getElementsByClassName('wrap')[0];
+	var i=0;
+	var pre=document.getElementById('pre');
+	var next=document.getElementById('next');
+	var images=wrap.getElementsByTagName('a');
+	var nav=document.getElementsByClassName('nav1')[0];
+	var li=nav.getElementsByTagName('li');
+	function imgtab(){
+		images[i%9].style.display ='none';
+		i++;
+		images[i%9].style.display ='block';
+	}
+	var timer =setInterval(imgtab,3000);
+	wrap.onmouseover = function(){
+		clearInterval(timer)
+	}
+	wrap.onmouseout = function(){
+		timer=setInterval(imgtab,3000)
+	}
+	pre.onclick = function(){
+		images[i%9].style.display ='none';
+		i--;
+		if(i<0){
+			i=8;
+		}
+		images[i%9].style.display ='block';
+	}
+	next.onclick= function(){
+		imgtab();
+	}
+	for(i=0;i<li.length;i++)
+	{
+		li[i].onmouseover=function(){
+			this.className="nav2";
+		}
+		li[i].onmouseout=function(){
+			this.className="";
+		}
+	}
+</script>
+</html>
