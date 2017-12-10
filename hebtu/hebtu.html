@@ -13,6 +13,9 @@
 		li {
 			list-style: none;
 		}
+		a{
+			text-decoration: none;
+		}
 		#header{
 			width: 937px;
 			background-color: #fff;
@@ -147,6 +150,23 @@
 			height: 150px;
 			width: 1206px;
 		}
+		.num{
+			float:left;
+			margin-left:680px;
+
+		}
+		.num li{
+			float: left;
+			width:12px;
+			height: 12px;
+			margin-left: 10px;
+			background-color: #fff;
+			color: #fff;
+			text-align: center;
+			border-radius: 50%;
+			margin-top:33px; 
+			cursor: pointer;
+		}
 	</style>
 </head>
 <body>
@@ -247,12 +267,25 @@
 		<a href="#"><img src="images/img8.jpg" alt=""></a>
 		<div class="bottom">
 			<span id="pre"><</span>
+			<ul class="num">
+				<li style="background: lightgray;"></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
 			<span id="next">></span>
 		</div>
 	</div>
 </body>
 <script>
 	var wrap = document.getElementsByClassName('wrap')[0];
+	var num = document.getElementsByClassName('num')[0];
+	var numList=num.children;
 	var i=0;
 	var pre=document.getElementById('pre');
 	var next=document.getElementById('next');
@@ -289,6 +322,20 @@
 		}
 		li[i].onmouseout=function(){
 			this.className="";
+		}
+	}
+	for(var j=0;j<numList.length;j++){
+		numList[j].index=j;
+
+		numList[j].onclick=function(){
+			//images[i%9].style.display='none';
+			for(var k=0;k<9;k++){
+				images[k].style.display='none';
+				numList[k].style.background='white';
+			}
+			images[this.index].style.display='block';
+			i=this.index;
+			this.style.background='lightgray'
 		}
 	}
 </script>

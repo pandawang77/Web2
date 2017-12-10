@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>QQ聊天</title>
+	<style>
+		*{
+			padding: 0;
+			margin: 0;
+		}
+		img{
+			width: 100%;
+			height: 100%;
+		}
+		ul,ol,li{
+			list-style: none;
+		}
+		.clearFix:after{
+			content: "";
+			display: block;
+			clear: both;
+		}
+		#wrap{
+			width: 678px;
+			height: 615px;
+			margin: 10px auto;
+			border: 1px solid #000; 
+			background-color: #f8f7f4;
+		}
+		/*顶部样式*/
+		.header{
+			height: 50px;
+		}
+		.header>span{
+			float: left;
+			margin: 20px 0 0 12px;
+			line-height: 30px;
+		}
+		.headImg{
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: url(img/head.jpg) center center;
+			background-size: cover;
+		}
+		/*导航样式*/
+		.nav{
+			height: 40px;
+			line-height: 37px;
+			border-bottom: 1px solid #e2e1df;
+		}
+		.nav>li{
+			float: left;
+			margin: 0 8px;
+			padding: 0 4px;
+			cursor: default;
+			color: #767676;
+		}
+		.nav>li:last-child:after{
+			content: "▼";
+			font-size: 10px;
+			margin-left: 5px;
+		}
+		.nav>li:hover{
+			color: #000;
+		}
+		.nav>.active{
+			color: #000;
+			border-bottom: 3px solid #009bdb;
+		}
+		/*底部主体样式*/
+		.footer>div{
+			float: left;
+		}
+		.notice{
+			width: 200px;
+			height: 525px;
+			border-left: 1px solid #e2e1df;
+
+		}
+		/*消息框样式*/
+		.talk{
+			width: 476px;
+		}
+		.talkMsg{
+			width: 476px;
+			height: 400px;
+			overflow-y: auto;
+			border-bottom: 1px solid #e2e1df;
+		}
+		.time{
+			text-align: center;
+			color: #808080;
+			font-size: 10px;
+			line-height: 30px;
+		}
+		.talkInp{
+			height: 124px;
+		}
+		.myHead{
+			float: right;
+			margin-right: 12px;
+			width: 30px;
+			height: 30px;
+			border-radius: 50%;
+			background: url(img/myHead.jpg) center center;
+			background-size: cover;
+		}
+		.content{
+			float: right;
+		}
+		.conText{
+			padding: 10px;
+			max-width: 380px;
+			line-height: 22px;
+			border-radius: 8px;
+			margin-right: 10px;
+			font-size: 12px;
+			float: left;
+			background-color: #dfdddb;
+		}
+		.area{
+			width: 456px;
+			padding: 5px 10px;
+			height: 50px;
+			resize: none;
+			outline: none;
+			border: none;
+			background-color: #f8f7f4;
+		}
+		.btn{
+			float: right;
+		}
+		.btn li{
+			font-weight: bold;
+			cursor: default;
+			display: block;
+			float: left;
+			height: 24px;
+			line-height: 24px;
+			padding: 0 16px;
+			margin-right: 12px;
+			border-radius: 4px;
+			font-size: 12px;
+			background-color: #dbd1be;
+		}
+		.send{
+			position: relative;
+		}
+		.send:after{
+			content: "▼";
+			color: #6e695f;
+			margin-left: 15px;
+		}
+		.warning{
+			width: 150px;
+			height: 50px;
+			border: 1px solid lightblue;
+			border-radius: 8px;
+			padding: 0 5px;
+			position: absolute;
+			left: -70px;
+			top: -55px;
+			display: none;
+		}
+		.img1{
+			position: absolute  ;top: 274px;left: 430px;
+		display: none;}
+		.img2{position: absolute;
+			display: none;
+			
+			 }
+		#b{position: absolute;;
+			text-align: center;
+			line-height: 30px;
+			list-style: none;
+		}
+		#b li{
+			float: left;
+			width: 31px;
+			list-style: none;
+		}
+		#b li a{
+			text-decoration: none;
+		}
+		.grey{
+			background-color: grey;
+			opacity:0.5;
+		}
+		.dis{display:block;position: absolute  ;top: 274px;left: 430px; }
+		#menu{
+			position: absolute;
+			left: 0;
+			top: 0;
+			width:100px;
+			height:105px;
+			background-color: lightgray;
+			display: none;
+			font-size: 13px;
+			z-index: 9999;
+			overflow: hidden;
+			list-style-type: none;
+			cursor: default;
+		}
+		#emo{
+		    height: 100px;
+		    width: 160px;
+		    display: none;
+		    background-color: #f9f8f6;
+		    position: absolute;
+		    bottom: 35px;
+
+		    border-radius: 8px;
+		    z-index: 0;
+		}
+		#emo    li{
+		    width: 30px;
+		    height: 30px;
+		    margin:1px;
+		}
+		#bf{
+		    height: 192px;
+		    width: 440px;
+		    position: absolute;
+		    bottom: 35px;
+		    border-radius:4px;
+		    overflow-y: scroll;
+		    background-color: #f9f8f6;
+		    border:1px solid ;
+		    z-index: 1;
+		}
+		#bf li{
+		    width: 30px;
+		    height: 30px;
+		    margin: 2px;
+		}
+		.butn
+		{
+		    width: 476px;
+		    height: 30px;
+		    position: absolute;
+		}
+		.butn li
+		{
+		    float: left;
+
+		    width: 32px;
+		    height: 30px;
+
+		    background-color: #f8f7f4;
+		}
+		.butn > p
+		{
+		    font-size: 13px;
+
+		    float: right;
+
+		    padding-top: 5px;
+		    padding-right: 10px;
+		}
+	</style>
+</head>
+<body>	<img src="img/1.jpg" class="img1" >
+	<img src="img/2.jpg" class="img2">
+	<div id="wrap">
+	
+		<div class="header">
+			<span class="headImg"></span>
+			<span>三四班一家亲</span>
+		</div>
+		<ul class="nav">
+			<li class="active">聊天</li>
+			<li>公告</li>
+			<li>相册</li>
+			<li>文件</li>
+			<li>活动</li>
+			<li>设置</li>
+		</ul>
+		<div class="footer">
+			<div class="talk">
+				<div class="talkMsg">
+					<div id="menu" >
+						<ul>
+							<li>复制</li>
+							<li>全部选择</li>
+							<li>显示比例</li>
+							<li>使用多彩气泡</li>
+							<li>设置多彩气泡</li>
+							<li>清屏</li>
+						</ul>
+					</div>			
+					<ul id="msgBox">
+						<li class="clearFix">
+							<p class="time">2017/10/12 16:59:32</p>
+							<p class="content">
+								<span class="conText">好好学习</span>
+								<span class="myHead"></span>
+							</p>
+						</li>
+						<li class="clearFix">
+							<p class="time">2017/10/12 16:59:32</p>
+							<p class="content">
+								<span class="conText">天天向上</span>
+								<span class="myHead"></span>
+							</p>
+						</li>
+					</ul>
+				</div>
+				<div class="talkInp">
+					<ul id="b">
+						<li  id="b1"><a href="" ></a> </li>
+						<li class="d"><a href="">&nbsp;</a> </li>
+						<li class="d" ><a href=""> &nbsp;</a> </li>
+						<li class="d"><a href=""> &nbsp;</a> </li>
+						<li class="d"><a href="">&nbsp; </a> </li>
+						<li class="d"><a href="">&nbsp;</a> </li>
+						<li class="d"><a href=""> &nbsp;</a> </li>
+						<li class="d"><a href="">&nbsp; </a> </li>
+						<li class="d"><a href="">&nbsp; </a> </li>
+						<li class="d"><a href="">&nbsp; </a> </li>
+						<li class="d"><a href="">&nbsp;</a> </li>
+						<li class="d"><a href=""> &nbsp;</a> </li>
+					</ul>
+					<div class="butn">
+						<div id="bf" style="display: none;"></div>
+						<div id="emo">
+						</div>
+						<ul>
+							<li><img src="img/tit1.png"></li>
+							<li id="emoji"><img src="img/tit2.png"></li>
+							<li><img src="img/tit3.png"></li>
+							<li><img src="img/tit4.png"></li>
+							<li><img src="img/tit5.png"></li>
+							<li><img src="img/tit6.png"></li>
+							<li><img src="img/tit7.png"></li>
+							<li><img src="img/tit8.png"></li>
+							<li><img src="img/tit9.png"></li>
+							<li><img src="img/tit10.png"></li>
+						</ul>
+						<p>消息记录</p>
+					</div>
+
+					<textarea class="area"></textarea>
+					<ul class="btn">
+						<li>关闭(c)</li>
+						<li class="send">
+							发送(s)
+							<p class="warning">发送内容不能为空，请重新输入</p>
+						</li>
+					</ul>
+				</div>
+			</div>
+			<div class="notice">
+
+			</div>
+		</div>
+	</div>
+</body>
+<script>
+	var send = document.getElementsByClassName('send')[0];
+	var area = document.getElementsByClassName('area')[0];
+	var warning = document.getElementsByClassName('warning')[0];
+	var msgBox = document.getElementById('msgBox');
+	var timer;
+	// 回车发送消息
+	area.onkeydown = function(e){
+		if(e.keyCode == 13&&e.shiftKey==false){
+			send.onclick();
+			e.preventDefault();
+		}
+	}
+
+	// 点击发送按钮发送消息
+	send.onclick = function(){
+		if (area.value == '') {
+			warning.style.display = 'block';
+			clearTimeout(timer);
+			timer = setTimeout(function(){
+				warning.style.display = 'none';
+			},1000)
+		}else{
+			var li = document.createElement('li');
+			li.className = 'clearFix';
+			li.innerHTML = '<p class="time">'+new Date().toLocaleString()+'</p><p class="content"><span class="conText">'+area.value+'</span><span class="myHead"></span></p>';
+			msgBox.appendChild(li);
+			li.scrollIntoView();
+			area.value ='';
+			area.focus();
+		}
+	}
+</script>
+
+<script type="text/javascript">
+	
+	document.getElementById("wrap").oncontextmenu = function(e){
+　　return false;
+}
+window.onload = function(){
+var  i=document.getElementsByClassName('img2');
+ document.getElementById("wrap").onmousedown = function(e){
+　　if(e.button ==2){
+			var x=e.screenX;
+			var y=e.screenY;
+			
+			i[0].style.top=y;
+			i[0].style.left=x;
+			i[0].style.display='block';
+			
+			
+　　}else if(e.button ==0){
+　　　i[0].style.display='none';
+　　}else if(e.button ==1){
+　　　　
+　　}
+}
+
+
+
+}
+
+</script>
+<script type="text/javascript">
+	window.onload=function(){
+		var B=document.getElementById('b');
+var B1i=B.getElementsByClassName('d');
+	var liNodes = B.getElementsByClassName("d");
+			for (var i=0; i<liNodes.length; i++)
+			{
+				liNodes[i].onmouseover = function(){
+					this.className = "grey";
+				}
+				liNodes[i].onmouseout = function(){
+					this.className = "";
+				}
+
+}
+
+
+
+
+var bb=document.getElementById('b1');
+
+bb.onmouseover =function(){
+	var biaoqing1=document.getElementById('img1');
+	biaoqing1.style.display="block";
+}
+bb.onmouseout =function(){
+	var biaoqing1=document.getElementById('img1');
+	biaoqing1.style.display="none";
+}
+	}
+</script>
+<script type="text/javascript">
+	var menu=document.getElementById("menu");
+	document.oncontextmenu=function(e){
+		var e=e||window.event;
+		var oX=e.clientX;
+		var oY=e.clientY;
+		menu.style.display="block";
+		menu.style.left=oX+"px";
+		menu.style.top=oY+"px";
+		return false;
+	}
+	document.onclick=function(e){
+		var e=e||window.event;
+		menu.style.display="none"
+	}
+	menu.onclick=function(e){
+		var e=e||window.event;
+		e.cancelBubble=true;
+	}
+</script>
+<script type="text/javascript">
+	var emoji = document.getElementById('emoji');
+var emo = document.getElementById('emo');
+var bf = document.getElementById('bf');
+var arrimgs = new Array();
+for (var q = 1; q < 110; q++) {
+	arrimgs[q - 1] = 'img/' + q + '.gif';
+}
+var n;
+for (n = 0; n < 15; n++) {
+	emo.innerHTML += '<li><img src="' + arrimgs[n] + '"/></li>'
+}
+var r;
+for (r = 0; r < 100; r++) {
+	bf.innerHTML += '<li><img src="' + arrimgs[r] + '"/></li>'
+}
+emoji.onmousedown = function() {
+	if (bf.style.display == "none") {
+		bf.style.display = 'block';
+	} else if (bf.style.display == "block") {
+		bf.style.display = 'none';
+	}
+	emo.style.display = 'none';
+}
+emoji.onmouseover = function() {
+	emo.style.display = 'block';
+}
+emoji.onmouseout = function() {
+	emo.style.display = 'none';
+}
+</script>
+</html>
