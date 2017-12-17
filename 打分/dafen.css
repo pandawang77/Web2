@@ -1,0 +1,22 @@
+body{
+	width: 460px;	
+  	padding:1px;
+}
+.dafen{
+	margin: auto;
+}
+#text{
+	margin-left: 10px;
+	background-image: url(images/bg.jpg);
+	background-repeat: repeat-x;
+}
+#box{
+	width: 450px;
+	height: 200px;
+}
+#button{
+	margin-top: 10px;
+	margin-right:33px;
+	width: 50px;
+	float: right;
+}
