@@ -1,22 +1,19 @@
-window.onload=function()
-{
-	var p=document.getElementById("picScroll");
-	var p1=document.getElementById("picScroll1");
+window.onload=function(){
+	var pic=document.getElementById("picScroll");
+	var pic1=document.getElementById("picScroll1");
 	var l=setInterval(changeToLeft,10);	
-	function changeToLeft()
-	{
-		if(p.scrollLeft>=p1.offsetWidth)
-		{
-			p.scrollLeft=0;
+	function changeToLeft(){
+		if(pic.scrollLeft>=pic1.offsetWidth){
+			pic.scrollLeft=0;
 		}	
 		else{
-			p.scrollLeft+=1;
+			pic.scrollLeft+=1;
 		}	   
 	}		
-	p.onmouseover=function(){
+	pic.onmouseover=function(){
 		clearInterval(l);
 	}
-	p.onmouseout=function(){
+	pic.onmouseout=function(){
 		l=setInterval(changeToLeft,10);
 	}
 }
