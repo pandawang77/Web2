@@ -1,0 +1,261 @@
+body{
+    background-image: url(images/bodybg.jpg);
+    font-size: 18px;
+    color: #bebebe;
+    font-family: '方正稚艺简体';
+    border-style: none;
+    list-style-type:none;
+    background-size: cover;
+    background-repeat: repeat-y;
+}
+*{
+    margin:0 auto;
+    padding: 0;
+    border: 0px;
+
+}
+a{
+    text-decoration: none;
+    color: #00cd66;
+}
+a:hover{
+    text-decoration: underline;
+}
+#header{
+    background-image: url(images/banner3.jpg);
+    height: 205px;
+    background-size: cover;
+    width: 100%;
+}
+#banner{
+    float: left;
+    margin-left: 25px;
+    margin-top: 38px;
+    width:1200px;
+    height: 130px;      
+}
+a.two:link{
+    color: #fff;
+    font-family: '方正特粗光辉简体';
+}
+a.two:hover{
+    text-decoration: none;
+    color: #836fff;
+}
+.nav1>li>a{
+        display: block;
+        width: 110px;
+        height:34px;
+        line-height: 50px;
+        padding-top: 5px;
+        text-align: center;
+        font-size: 15px;
+        font-weight: bold;
+        color: black;
+        text-decoration: none;
+        }
+.nav1>li{
+    list-style: none;
+    float: left;
+    position: relative;
+}
+.nav1>li>ul{
+    display: none;
+}
+.nav1>li.nav2>ul{
+    display: block;
+    position: absolute;
+    top:38px;
+    background:#fafad2;
+    width: 120px;
+    z-index: 1;
+}
+.nav1>li.nav2>a{
+    background:#fafad2;
+    color: #ee5c42;
+}
+.nav1>li>ul>li{
+    list-style: none;
+    cursor: pointer;
+}
+.nav1>li>ul>li>a{
+    width: 130px;
+    padding-left:20px;
+    font-size: 14px;
+    height: 45px;
+    line-height: 45px;
+    font-weight: 100;
+    text-decoration: none;
+    color: #836fff;
+    display: inline;
+}
+.nav1>li>ul>li:hover{
+    background: #ee6363;
+} 
+.nav{
+    width:1024px;       
+}
+.wrap{
+    width:1024px;
+    height: 396px;
+    clear:both;
+    position: relative;
+    border: 3px solid #836;
+    margin:-5px auto;
+    overflow: hidden;
+}
+.wrap a{
+    display: none;
+}
+#content_bottom{
+    width: 1000px;
+    margin-top: 50px;
+    height:360px;
+    position: relative;
+}
+#box{
+    width: 240px;
+    height: 100px;
+    float: left;
+    position: relative;
+}
+#uofon{
+    height:50px;
+    width:240px; 
+}
+#fon{
+    opacity: 0.6;
+    display: none;
+    bottom:-220px;
+    position:absolute;
+    background:#333; 
+    width:240px;
+    margin-bottom: -5px;
+    color: #5b5;
+    font-size:18px;
+   
+}
+#lefter{
+    height:320px;
+    width:240px;
+    float: left;
+}
+.righter{
+   height: 320px;
+   width:400px;
+   float: left;
+   margin-left: 18px;
+}
+.righter p{
+    font-family: '方正稚艺简体';
+    font-size: 20px;
+    line-height: 24px;
+    text-indent: 24px;
+}
+#footer{
+    height: 105px;
+    clear: both;
+    color: #fff;
+    text-align: center;
+    position: relative;
+    top: 200px;
+}
+a.yj:link{
+    color: #fff;
+
+}
+a.yj:hover{
+    text-decoration: none;
+    color: #fff;
+}
+a.yj{
+    text-align: center;
+    color: #fff;
+}
+#content{
+    width: 1000px;
+    overflow: hidden;
+    color: #00cd66;
+    margin-top: 15px;
+}
+.picture{
+    text-align: center;
+    width:144px;
+    height: 108px;
+    margin: 5px 8px;
+}
+.desc{
+    text-align: center;
+    font-size: 12px;
+    font-family: '幼圆'；
+}
+#zhong_left{
+    width: 30%;
+    float: left;
+    color: #bebebe;
+    margin-top: 10px;
+}
+#zhong_zhong{
+    width: 30%;
+    float: left;
+    margin-top: 10px;
+    padding-left:50px;
+}
+#zhong_right{
+    width: 40%;
+    float: left;
+    padding-top:5px;
+    padding-left: 85px;
+    position: absolute;
+
+    left:800px;
+}
+.qiyuan{
+    text-align: center;
+    font-size: 14px;
+    color: #ffd700;
+    font-family: '方正胖娃简体'
+}
+.qy{
+    text-indent: 2em;
+    line-height: 22px; 
+    color: #ffb6c1;
+    font-family: '方正稚艺简体';
+}
+a.jiang:link{
+    color: #fff;
+    font-family: '方正稚艺简体';
+}
+a.jiang:hover{
+    text-decoration: none;
+    color: #836fff;
+}
+ul,li#jiang{
+    list-style: none;
+}
+#caipupic{
+    width: 300px;
+    height:225px;
+    float: left;
+    position:relative;
+    left: 65px;
+}
+#cp{
+    text-align: center;
+    font-size: 14px;
+    color: #ffd700;
+    font-family: '方正胖娃简体';
+    position: relative;
+    left: -90px;
+}
+#caipu{
+    text-indent: 2em;
+    line-height: 22px; 
+    color: #0000EE;
+    font-family: '方正稚艺简体';
+    text-align: center;
+    position: relative;
+    top:230px;
+    left:-240px;
+}
+
